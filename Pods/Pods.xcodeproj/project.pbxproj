@@ -1,0 +1,928 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B27203E9B160A390F5E17796DE86932 /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A35D0B5A3574893A258DF1BCAA75F8EB /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12EF25578B49A115595FDFCCF1B4EDD0 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392F30E77ACEF773574481788FC164CE /* ISO8601DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		17FB70CB0A61D210C6F70798BA89D600 /* Pods-FlickrDemoApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D4B358DCCCB63C8A6D5A48EE7CBA4D9 /* Pods-FlickrDemoApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		191223246695B518ECCF7206E518725B /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A933395E455F8BF19A8E5F3962F344DF /* URLTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1A86D9414B362C705ACA57934DDC5CC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		250BACC429DD19E9D523CC55E4F55158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		2868717245A49E3E130B53CC1BE7C123 /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E23AA6A3044DC116EB9672E4C41E9BC /* EnumOperators.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2C18818657DF8F0347F03E98F8B73D57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		314B9E9F909985AD40B416A0CE4D8F51 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F906223EDFF143D8FC85E7BDD33990E9 /* DateFormatterTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3168742F7D72DF80FA485C69BA3B9D90 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E57A1A15BA8E0CA5333E387DA53050 /* Mappable.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		42F182CCC2C8B7521C2ABBD5D61B8F67 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DC0DF39D000B5F3B8CBB508300E9EA /* TransformOf.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4421476F7F26886F96E830C664C39FA3 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A6F4199F9DACDB4F130E78984C177B /* ImmutableMappable.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		45CA1F8F65C0E30B5402A998E15DEBB6 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EE13AFBF3AA14172CBE0D8BCDF5E7 /* EnumTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4C86D4E914CE708EDEC9B00D9E32770C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF71DAD642E10BDF1FE8BC808AAB724 /* Map.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4C8E3610E9DEE3F3EF326AEE6C104DB5 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3A77ECEA5DA5F05866307CB09D6969 /* MapError.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4FDEABA45359B146DF34457AFD40CB35 /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE823BFD51BCAFB8DFE9E3FB75FFC83D /* DateTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6B916393D9DCA31DAD8E601A13BBAEAC /* Pods-FlickrDemoAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 176072B5C5A3270F5F71521D45A4E26C /* Pods-FlickrDemoAppTests-dummy.m */; };
+		7183AD43047C455B682A4020359C2A5E /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C3F859C052F03AE473FDD08E9D3FA4 /* CustomDateFormatTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7F1E9E1E1B49552F24FB32C65B9FEB7A /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF89DE8C0F20ED983508FB20E08E640C /* ToJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9663A29E978A80886C5FA9865AEB220C /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F81C79A855F1B8B829D010AFC9A955 /* NSDecimalNumberTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		96F4396D8C7690CE737796C23F04F5B5 /* Pods-FlickrDemoAppTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E309B805391B9829A17CA6819F3AF71E /* Pods-FlickrDemoAppTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1E688D4F3CA0CF54DC76452C3DE05DD /* Pods-FlickrDemoApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A26EE1099926FA97DD43F83BB988CA0 /* Pods-FlickrDemoApp-dummy.m */; };
+		A5014B98E0B339947198C6803DE634E8 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06CDAEF9D7972CD688E81E8481C5DD6 /* DictionaryTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A6C2F066D75588425CC85D20985C2EE2 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C0D11E539ED078EF3E964B47993DE5 /* TransformType.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A83C9438D9D5695F8E18FB652CA9F168 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2FEFCCEC489E1F7D5AC152045E9E0C /* HexColorTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AF964F3013312E596751FC274C73FCF9 /* Pods-FlickrDemoAppUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7BE64A2A1F0E6D2CB6631BD61D2D23A /* Pods-FlickrDemoAppUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B3F322D2C4B88A3EE24DA8797D1F3189 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A84F096F8DE4FCC318A170848E587458 /* ObjectMapper-dummy.m */; };
+		BD89B01FB9D16F6856DFE7F6986A824E /* Pods-FlickrDemoAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC66C9258CC4CC9FB3F5014F18518AF /* Pods-FlickrDemoAppUITests-dummy.m */; };
+		D1E63601D4F17D2EF65FAFD1EDEDD5F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		DC1F12C360F2419DB390C24A7AC772D4 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B153040E6D5A76EA5EFC54804596EB0 /* FromJSON.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E9D0A1BD282C3D6E46D284644A676921 /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACD9773024FB0574015729F915B363E /* DataTransform.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		EE3A19C18674237A97F15FE09BE71EA3 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA1163C8F70C54C02E67C6F3F128696 /* Mapper.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F6EC7E4B2FA0CEF7F9A36AC4444B71DB /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F53A95590265CC86F9FA955B8D1F76B /* TransformOperators.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FEEF32367907C0D129AD9DE56F6932D5 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED98919806147777380B9BDA6DD0FFB /* Operators.swift */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		183FF982E3C193537162BDDA1FC397F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B43918AB915242B851ABEFB5D70BE0AD;
+			remoteInfo = ObjectMapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06A341539C543D104AC064945B3FA0A3 /* Pods_FlickrDemoAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlickrDemoAppUITests.framework; path = "Pods-FlickrDemoAppUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC36DC159075DEDD66D3C0BE3D41EDB /* Pods-FlickrDemoAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlickrDemoAppTests-resources.sh"; sourceTree = "<group>"; };
+		0E3858C2CFE53D3EE33B786A6C9C50C4 /* Pods_FlickrDemoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlickrDemoAppTests.framework; path = "Pods-FlickrDemoAppTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		127EE13AFBF3AA14172CBE0D8BCDF5E7 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
+		16183B89F95B37098DFA3FC22C7D483F /* Pods-FlickrDemoApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FlickrDemoApp.modulemap"; sourceTree = "<group>"; };
+		176072B5C5A3270F5F71521D45A4E26C /* Pods-FlickrDemoAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlickrDemoAppTests-dummy.m"; sourceTree = "<group>"; };
+		1B153040E6D5A76EA5EFC54804596EB0 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
+		23F81C79A855F1B8B829D010AFC9A955 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
+		2B550622F09A67E0C5F7F181C997CC85 /* Pods_FlickrDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlickrDemoApp.framework; path = "Pods-FlickrDemoApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C3A77ECEA5DA5F05866307CB09D6969 /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
+		2E23AA6A3044DC116EB9672E4C41E9BC /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
+		2E789E670DF4D3EF9570ED51DB240189 /* Pods-FlickrDemoApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlickrDemoApp-frameworks.sh"; sourceTree = "<group>"; };
+		30C3F859C052F03AE473FDD08E9D3FA4 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
+		32A3FE3FD694D92F8C6943E0CC8A0B3F /* Pods-FlickrDemoAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlickrDemoAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		338AA2B374217C3CA6B7A156B3427C2F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		392F30E77ACEF773574481788FC164CE /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
+		3A0B5344F2C981BB2862CDB56CAB921A /* Pods-FlickrDemoApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlickrDemoApp-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3F2FEFCCEC489E1F7D5AC152045E9E0C /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
+		41247A94CC92D0AA85C5F2B551144834 /* Pods-FlickrDemoAppUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlickrDemoAppUITests-resources.sh"; sourceTree = "<group>"; };
+		44BB3D59C048B59FEB12E46DD1D34AFB /* Pods-FlickrDemoAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlickrDemoAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		49AD61A44D3E8962932D733083EF8C52 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D4B358DCCCB63C8A6D5A48EE7CBA4D9 /* Pods-FlickrDemoApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlickrDemoApp-umbrella.h"; sourceTree = "<group>"; };
+		4EC66C9258CC4CC9FB3F5014F18518AF /* Pods-FlickrDemoAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlickrDemoAppUITests-dummy.m"; sourceTree = "<group>"; };
+		59E57A1A15BA8E0CA5333E387DA53050 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
+		604BE185AEDE24378C5C258677171DAA /* ObjectMapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.xcconfig; sourceTree = "<group>"; };
+		61DC0DF39D000B5F3B8CBB508300E9EA /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
+		6220D1C68F8922CB33DD1B4BB2B4115C /* Pods-FlickrDemoAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlickrDemoAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		62829F22F59A4C17845644F55DE6D481 /* Pods-FlickrDemoAppTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FlickrDemoAppTests.modulemap"; sourceTree = "<group>"; };
+		6F53A95590265CC86F9FA955B8D1F76B /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
+		6FA36B052964FC94BEB161AF4608A4B7 /* Pods-FlickrDemoAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlickrDemoAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		707DFA04A556828B43E3D745DB9FB8F2 /* Pods-FlickrDemoAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlickrDemoAppTests-frameworks.sh"; sourceTree = "<group>"; };
+		76108903E69A2DE0F123D832481768CA /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		7A26EE1099926FA97DD43F83BB988CA0 /* Pods-FlickrDemoApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlickrDemoApp-dummy.m"; sourceTree = "<group>"; };
+		84E8F569849D7481E3ED8CF0860366C1 /* Pods-FlickrDemoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlickrDemoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EA1163C8F70C54C02E67C6F3F128696 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
+		A35D0B5A3574893A258DF1BCAA75F8EB /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
+		A7824C5D6D6CACCD871078AEFD6387B6 /* Pods-FlickrDemoAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlickrDemoAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A7BE64A2A1F0E6D2CB6631BD61D2D23A /* Pods-FlickrDemoAppUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlickrDemoAppUITests-umbrella.h"; sourceTree = "<group>"; };
+		A84F096F8DE4FCC318A170848E587458 /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
+		A87C82251057558A8C9F5283B3F6A8A8 /* Pods-FlickrDemoApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlickrDemoApp-resources.sh"; sourceTree = "<group>"; };
+		A933395E455F8BF19A8E5F3962F344DF /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
+		C136F609F05DEC800B52B6641E78648B /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C18EB2605124A5CEF6EE5FABF496037A /* Pods-FlickrDemoAppUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FlickrDemoAppUITests.modulemap"; sourceTree = "<group>"; };
+		C5433B14A726C25D87462624AABAF2BB /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
+		C5AC0B731218DEF2156A897BEB41E231 /* Pods-FlickrDemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlickrDemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C6C0D11E539ED078EF3E964B47993DE5 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
+		C8514234E8BD077CF92A99CB0EDF9FE7 /* Pods-FlickrDemoAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlickrDemoAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		CA31EC9560B25995F9E396EA1B294160 /* Pods-FlickrDemoApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlickrDemoApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CE823BFD51BCAFB8DFE9E3FB75FFC83D /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
+		CF89DE8C0F20ED983508FB20E08E640C /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
+		D1A6F4199F9DACDB4F130E78984C177B /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
+		DACD9773024FB0574015729F915B363E /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
+		DB1884B6557010D0D86D2F337A3877CC /* Pods-FlickrDemoAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlickrDemoAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		DED98919806147777380B9BDA6DD0FFB /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		E309B805391B9829A17CA6819F3AF71E /* Pods-FlickrDemoAppTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlickrDemoAppTests-umbrella.h"; sourceTree = "<group>"; };
+		EC367535E9843AE7C0084D24F1959687 /* Pods-FlickrDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlickrDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		ECF71DAD642E10BDF1FE8BC808AAB724 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
+		F06CDAEF9D7972CD688E81E8481C5DD6 /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
+		F906223EDFF143D8FC85E7BDD33990E9 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
+		F9742C82691F99C4A4D781736CC03423 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE51DE9814603F22731AE2FE72975ACF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE5C934C089B977E9F0DEB212B3F44FE /* Pods-FlickrDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlickrDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		61C8D9868B7E2C9B6A4E97BFA92F46E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A86D9414B362C705ACA57934DDC5CC7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CAC48C3B2E0495F72B8AC1D06B8DF86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C18818657DF8F0347F03E98F8B73D57 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6978E37089917CDA587B9AA071EA425 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				250BACC429DD19E9D523CC55E4F55158 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E99B0D6D3D2CB7FB3C28AF5F74A7634A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1E63601D4F17D2EF65FAFD1EDEDD5F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		294124637B69901CADC7692C4D2A8C67 /* ObjectMapper */ = {
+			isa = PBXGroup;
+			children = (
+				30C3F859C052F03AE473FDD08E9D3FA4 /* CustomDateFormatTransform.swift */,
+				DACD9773024FB0574015729F915B363E /* DataTransform.swift */,
+				F906223EDFF143D8FC85E7BDD33990E9 /* DateFormatterTransform.swift */,
+				CE823BFD51BCAFB8DFE9E3FB75FFC83D /* DateTransform.swift */,
+				F06CDAEF9D7972CD688E81E8481C5DD6 /* DictionaryTransform.swift */,
+				2E23AA6A3044DC116EB9672E4C41E9BC /* EnumOperators.swift */,
+				127EE13AFBF3AA14172CBE0D8BCDF5E7 /* EnumTransform.swift */,
+				1B153040E6D5A76EA5EFC54804596EB0 /* FromJSON.swift */,
+				3F2FEFCCEC489E1F7D5AC152045E9E0C /* HexColorTransform.swift */,
+				D1A6F4199F9DACDB4F130E78984C177B /* ImmutableMappable.swift */,
+				392F30E77ACEF773574481788FC164CE /* ISO8601DateTransform.swift */,
+				ECF71DAD642E10BDF1FE8BC808AAB724 /* Map.swift */,
+				2C3A77ECEA5DA5F05866307CB09D6969 /* MapError.swift */,
+				59E57A1A15BA8E0CA5333E387DA53050 /* Mappable.swift */,
+				9EA1163C8F70C54C02E67C6F3F128696 /* Mapper.swift */,
+				23F81C79A855F1B8B829D010AFC9A955 /* NSDecimalNumberTransform.swift */,
+				DED98919806147777380B9BDA6DD0FFB /* Operators.swift */,
+				CF89DE8C0F20ED983508FB20E08E640C /* ToJSON.swift */,
+				61DC0DF39D000B5F3B8CBB508300E9EA /* TransformOf.swift */,
+				6F53A95590265CC86F9FA955B8D1F76B /* TransformOperators.swift */,
+				C6C0D11E539ED078EF3E964B47993DE5 /* TransformType.swift */,
+				A933395E455F8BF19A8E5F3962F344DF /* URLTransform.swift */,
+				31B42CAFB03FBF00E921A113B1389032 /* Support Files */,
+			);
+			name = ObjectMapper;
+			path = ObjectMapper;
+			sourceTree = "<group>";
+		};
+		2C0E0F8273134371E5FDFA2331AD4EB9 /* Pods-FlickrDemoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				338AA2B374217C3CA6B7A156B3427C2F /* Info.plist */,
+				62829F22F59A4C17845644F55DE6D481 /* Pods-FlickrDemoAppTests.modulemap */,
+				A7824C5D6D6CACCD871078AEFD6387B6 /* Pods-FlickrDemoAppTests-acknowledgements.markdown */,
+				6220D1C68F8922CB33DD1B4BB2B4115C /* Pods-FlickrDemoAppTests-acknowledgements.plist */,
+				176072B5C5A3270F5F71521D45A4E26C /* Pods-FlickrDemoAppTests-dummy.m */,
+				707DFA04A556828B43E3D745DB9FB8F2 /* Pods-FlickrDemoAppTests-frameworks.sh */,
+				0AC36DC159075DEDD66D3C0BE3D41EDB /* Pods-FlickrDemoAppTests-resources.sh */,
+				E309B805391B9829A17CA6819F3AF71E /* Pods-FlickrDemoAppTests-umbrella.h */,
+				44BB3D59C048B59FEB12E46DD1D34AFB /* Pods-FlickrDemoAppTests.debug.xcconfig */,
+				C5AC0B731218DEF2156A897BEB41E231 /* Pods-FlickrDemoAppTests.release.xcconfig */,
+			);
+			name = "Pods-FlickrDemoAppTests";
+			path = "Target Support Files/Pods-FlickrDemoAppTests";
+			sourceTree = "<group>";
+		};
+		31B42CAFB03FBF00E921A113B1389032 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9742C82691F99C4A4D781736CC03423 /* Info.plist */,
+				C5433B14A726C25D87462624AABAF2BB /* ObjectMapper.modulemap */,
+				604BE185AEDE24378C5C258677171DAA /* ObjectMapper.xcconfig */,
+				A84F096F8DE4FCC318A170848E587458 /* ObjectMapper-dummy.m */,
+				76108903E69A2DE0F123D832481768CA /* ObjectMapper-prefix.pch */,
+				A35D0B5A3574893A258DF1BCAA75F8EB /* ObjectMapper-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ObjectMapper";
+			sourceTree = "<group>";
+		};
+		4ED9275EEEBC6D6A7DFDED35A18D6B82 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB66623685ABA6486A555ED8ABA8B259 /* Pods-FlickrDemoApp */,
+				2C0E0F8273134371E5FDFA2331AD4EB9 /* Pods-FlickrDemoAppTests */,
+				665BF3A895D56A35E1EDC4EACCDB15FB /* Pods-FlickrDemoAppUITests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		55B067596C888AA7DDDA68BF94C373B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				294124637B69901CADC7692C4D2A8C67 /* ObjectMapper */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		665BF3A895D56A35E1EDC4EACCDB15FB /* Pods-FlickrDemoAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FE51DE9814603F22731AE2FE72975ACF /* Info.plist */,
+				C18EB2605124A5CEF6EE5FABF496037A /* Pods-FlickrDemoAppUITests.modulemap */,
+				32A3FE3FD694D92F8C6943E0CC8A0B3F /* Pods-FlickrDemoAppUITests-acknowledgements.markdown */,
+				DB1884B6557010D0D86D2F337A3877CC /* Pods-FlickrDemoAppUITests-acknowledgements.plist */,
+				4EC66C9258CC4CC9FB3F5014F18518AF /* Pods-FlickrDemoAppUITests-dummy.m */,
+				C8514234E8BD077CF92A99CB0EDF9FE7 /* Pods-FlickrDemoAppUITests-frameworks.sh */,
+				41247A94CC92D0AA85C5F2B551144834 /* Pods-FlickrDemoAppUITests-resources.sh */,
+				A7BE64A2A1F0E6D2CB6631BD61D2D23A /* Pods-FlickrDemoAppUITests-umbrella.h */,
+				84E8F569849D7481E3ED8CF0860366C1 /* Pods-FlickrDemoAppUITests.debug.xcconfig */,
+				6FA36B052964FC94BEB161AF4608A4B7 /* Pods-FlickrDemoAppUITests.release.xcconfig */,
+			);
+			name = "Pods-FlickrDemoAppUITests";
+			path = "Target Support Files/Pods-FlickrDemoAppUITests";
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				55B067596C888AA7DDDA68BF94C373B2 /* Pods */,
+				AEC7A84AB3575EFE9EE80E057169C95B /* Products */,
+				4ED9275EEEBC6D6A7DFDED35A18D6B82 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		AEC7A84AB3575EFE9EE80E057169C95B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C136F609F05DEC800B52B6641E78648B /* ObjectMapper.framework */,
+				2B550622F09A67E0C5F7F181C997CC85 /* Pods_FlickrDemoApp.framework */,
+				0E3858C2CFE53D3EE33B786A6C9C50C4 /* Pods_FlickrDemoAppTests.framework */,
+				06A341539C543D104AC064945B3FA0A3 /* Pods_FlickrDemoAppUITests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB66623685ABA6486A555ED8ABA8B259 /* Pods-FlickrDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				49AD61A44D3E8962932D733083EF8C52 /* Info.plist */,
+				16183B89F95B37098DFA3FC22C7D483F /* Pods-FlickrDemoApp.modulemap */,
+				3A0B5344F2C981BB2862CDB56CAB921A /* Pods-FlickrDemoApp-acknowledgements.markdown */,
+				CA31EC9560B25995F9E396EA1B294160 /* Pods-FlickrDemoApp-acknowledgements.plist */,
+				7A26EE1099926FA97DD43F83BB988CA0 /* Pods-FlickrDemoApp-dummy.m */,
+				2E789E670DF4D3EF9570ED51DB240189 /* Pods-FlickrDemoApp-frameworks.sh */,
+				A87C82251057558A8C9F5283B3F6A8A8 /* Pods-FlickrDemoApp-resources.sh */,
+				4D4B358DCCCB63C8A6D5A48EE7CBA4D9 /* Pods-FlickrDemoApp-umbrella.h */,
+				EC367535E9843AE7C0084D24F1959687 /* Pods-FlickrDemoApp.debug.xcconfig */,
+				FE5C934C089B977E9F0DEB212B3F44FE /* Pods-FlickrDemoApp.release.xcconfig */,
+			);
+			name = "Pods-FlickrDemoApp";
+			path = "Target Support Files/Pods-FlickrDemoApp";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		20AC7AE4649827B337A8ADD3E3ECA07C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96F4396D8C7690CE737796C23F04F5B5 /* Pods-FlickrDemoAppTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3442E74E814BF1A93A102A12E5A8453A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF964F3013312E596751FC274C73FCF9 /* Pods-FlickrDemoAppUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1331EB42212E35AC0B344634BB82EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17FB70CB0A61D210C6F70798BA89D600 /* Pods-FlickrDemoApp-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BFA283BF3122E163C4489C254D9862 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B27203E9B160A390F5E17796DE86932 /* ObjectMapper-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		592F328BA14C82D3FAC2F9F8B5BE9FA8 /* Pods-FlickrDemoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034371A769C82D623C44D1A092A348F9 /* Build configuration list for PBXNativeTarget "Pods-FlickrDemoAppTests" */;
+			buildPhases = (
+				35EA98CB2070B7EECB7E0A01B619D8CF /* Sources */,
+				E99B0D6D3D2CB7FB3C28AF5F74A7634A /* Frameworks */,
+				20AC7AE4649827B337A8ADD3E3ECA07C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlickrDemoAppTests";
+			productName = "Pods-FlickrDemoAppTests";
+			productReference = 0E3858C2CFE53D3EE33B786A6C9C50C4 /* Pods_FlickrDemoAppTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B43918AB915242B851ABEFB5D70BE0AD /* ObjectMapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F89BCF8F71331FFD619BCBAFFC87F2A4 /* Build configuration list for PBXNativeTarget "ObjectMapper" */;
+			buildPhases = (
+				BD107137834CD6974D07FBBE5DACD957 /* Sources */,
+				B6978E37089917CDA587B9AA071EA425 /* Frameworks */,
+				F3BFA283BF3122E163C4489C254D9862 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjectMapper;
+			productName = ObjectMapper;
+			productReference = C136F609F05DEC800B52B6641E78648B /* ObjectMapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B5EE85AFAB4C175A1E9C00F96496118F /* Pods-FlickrDemoAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C24F88A9D37B82655DC88AD82C07F45A /* Build configuration list for PBXNativeTarget "Pods-FlickrDemoAppUITests" */;
+			buildPhases = (
+				1EE3F1515A122664FF6BFC16116FD90D /* Sources */,
+				9CAC48C3B2E0495F72B8AC1D06B8DF86 /* Frameworks */,
+				3442E74E814BF1A93A102A12E5A8453A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FlickrDemoAppUITests";
+			productName = "Pods-FlickrDemoAppUITests";
+			productReference = 06A341539C543D104AC064945B3FA0A3 /* Pods_FlickrDemoAppUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED3EAE88E434B2B0752529643DC72BC6 /* Pods-FlickrDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB8FCDC690ED8D4FAED8534D4B67E0B1 /* Build configuration list for PBXNativeTarget "Pods-FlickrDemoApp" */;
+			buildPhases = (
+				CAA95DCCA83F4F66497570AD716F335E /* Sources */,
+				61C8D9868B7E2C9B6A4E97BFA92F46E3 /* Frameworks */,
+				CE1331EB42212E35AC0B344634BB82EC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4507F29E141F6EAEE6E78681D1834A12 /* PBXTargetDependency */,
+			);
+			name = "Pods-FlickrDemoApp";
+			productName = "Pods-FlickrDemoApp";
+			productReference = 2B550622F09A67E0C5F7F181C997CC85 /* Pods_FlickrDemoApp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AEC7A84AB3575EFE9EE80E057169C95B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B43918AB915242B851ABEFB5D70BE0AD /* ObjectMapper */,
+				ED3EAE88E434B2B0752529643DC72BC6 /* Pods-FlickrDemoApp */,
+				592F328BA14C82D3FAC2F9F8B5BE9FA8 /* Pods-FlickrDemoAppTests */,
+				B5EE85AFAB4C175A1E9C00F96496118F /* Pods-FlickrDemoAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EE3F1515A122664FF6BFC16116FD90D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD89B01FB9D16F6856DFE7F6986A824E /* Pods-FlickrDemoAppUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		35EA98CB2070B7EECB7E0A01B619D8CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B916393D9DCA31DAD8E601A13BBAEAC /* Pods-FlickrDemoAppTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD107137834CD6974D07FBBE5DACD957 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7183AD43047C455B682A4020359C2A5E /* CustomDateFormatTransform.swift in Sources */,
+				E9D0A1BD282C3D6E46D284644A676921 /* DataTransform.swift in Sources */,
+				314B9E9F909985AD40B416A0CE4D8F51 /* DateFormatterTransform.swift in Sources */,
+				4FDEABA45359B146DF34457AFD40CB35 /* DateTransform.swift in Sources */,
+				A5014B98E0B339947198C6803DE634E8 /* DictionaryTransform.swift in Sources */,
+				2868717245A49E3E130B53CC1BE7C123 /* EnumOperators.swift in Sources */,
+				45CA1F8F65C0E30B5402A998E15DEBB6 /* EnumTransform.swift in Sources */,
+				DC1F12C360F2419DB390C24A7AC772D4 /* FromJSON.swift in Sources */,
+				A83C9438D9D5695F8E18FB652CA9F168 /* HexColorTransform.swift in Sources */,
+				4421476F7F26886F96E830C664C39FA3 /* ImmutableMappable.swift in Sources */,
+				12EF25578B49A115595FDFCCF1B4EDD0 /* ISO8601DateTransform.swift in Sources */,
+				4C86D4E914CE708EDEC9B00D9E32770C /* Map.swift in Sources */,
+				4C8E3610E9DEE3F3EF326AEE6C104DB5 /* MapError.swift in Sources */,
+				3168742F7D72DF80FA485C69BA3B9D90 /* Mappable.swift in Sources */,
+				EE3A19C18674237A97F15FE09BE71EA3 /* Mapper.swift in Sources */,
+				9663A29E978A80886C5FA9865AEB220C /* NSDecimalNumberTransform.swift in Sources */,
+				B3F322D2C4B88A3EE24DA8797D1F3189 /* ObjectMapper-dummy.m in Sources */,
+				FEEF32367907C0D129AD9DE56F6932D5 /* Operators.swift in Sources */,
+				7F1E9E1E1B49552F24FB32C65B9FEB7A /* ToJSON.swift in Sources */,
+				42F182CCC2C8B7521C2ABBD5D61B8F67 /* TransformOf.swift in Sources */,
+				F6EC7E4B2FA0CEF7F9A36AC4444B71DB /* TransformOperators.swift in Sources */,
+				A6C2F066D75588425CC85D20985C2EE2 /* TransformType.swift in Sources */,
+				191223246695B518ECCF7206E518725B /* URLTransform.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAA95DCCA83F4F66497570AD716F335E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E688D4F3CA0CF54DC76452C3DE05DD /* Pods-FlickrDemoApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4507F29E141F6EAEE6E78681D1834A12 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ObjectMapper;
+			target = B43918AB915242B851ABEFB5D70BE0AD /* ObjectMapper */;
+			targetProxy = 183FF982E3C193537162BDDA1FC397F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3F145B11D2FF864ADF033CB40427D12C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 604BE185AEDE24378C5C258677171DAA /* ObjectMapper.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		673254EEAF0B5BF4596080C749645884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6A7CDDB120BE32507B23F963EDDB8867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FA36B052964FC94BEB161AF4608A4B7 /* Pods-FlickrDemoAppUITests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlickrDemoAppUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlickrDemoAppUITests/Pods-FlickrDemoAppUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlickrDemoAppUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		99FCB7E8B26EB185BF4C5C19F33748E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 604BE185AEDE24378C5C258677171DAA /* ObjectMapper.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ObjectMapper/ObjectMapper-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ObjectMapper/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ObjectMapper/ObjectMapper.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ObjectMapper;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C24E2B3C443E225F00A6458DE7F246AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44BB3D59C048B59FEB12E46DD1D34AFB /* Pods-FlickrDemoAppTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlickrDemoAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlickrDemoAppTests/Pods-FlickrDemoAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlickrDemoAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CBC541326DE796C037BBCE2366602A8B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5AC0B731218DEF2156A897BEB41E231 /* Pods-FlickrDemoAppTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlickrDemoAppTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlickrDemoAppTests/Pods-FlickrDemoAppTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlickrDemoAppTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EAC4722B80C47FE89314FEAFD010A0C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC367535E9843AE7C0084D24F1959687 /* Pods-FlickrDemoApp.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlickrDemoApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlickrDemoApp/Pods-FlickrDemoApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlickrDemoApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F08E1956822D4AFE8145EEB6B0882B6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84E8F569849D7481E3ED8CF0860366C1 /* Pods-FlickrDemoAppUITests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlickrDemoAppUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlickrDemoAppUITests/Pods-FlickrDemoAppUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlickrDemoAppUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F697DCED0D73936AA9E3DB1EBEEC6571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE5C934C089B977E9F0DEB212B3F44FE /* Pods-FlickrDemoApp.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-FlickrDemoApp/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-FlickrDemoApp/Pods-FlickrDemoApp.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_FlickrDemoApp;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		034371A769C82D623C44D1A092A348F9 /* Build configuration list for PBXNativeTarget "Pods-FlickrDemoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C24E2B3C443E225F00A6458DE7F246AE /* Debug */,
+				CBC541326DE796C037BBCE2366602A8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F26E6EB105713A6A7E7E2E283AC2DF /* Debug */,
+				673254EEAF0B5BF4596080C749645884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C24F88A9D37B82655DC88AD82C07F45A /* Build configuration list for PBXNativeTarget "Pods-FlickrDemoAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F08E1956822D4AFE8145EEB6B0882B6D /* Debug */,
+				6A7CDDB120BE32507B23F963EDDB8867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB8FCDC690ED8D4FAED8534D4B67E0B1 /* Build configuration list for PBXNativeTarget "Pods-FlickrDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAC4722B80C47FE89314FEAFD010A0C5 /* Debug */,
+				F697DCED0D73936AA9E3DB1EBEEC6571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F89BCF8F71331FFD619BCBAFFC87F2A4 /* Build configuration list for PBXNativeTarget "ObjectMapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F145B11D2FF864ADF033CB40427D12C /* Debug */,
+				99FCB7E8B26EB185BF4C5C19F33748E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
