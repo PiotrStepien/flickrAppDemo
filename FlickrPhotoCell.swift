@@ -64,6 +64,7 @@ class FlickrPhotoCell: UICollectionViewCell {
         super.awakeFromNib()
         indicatorView.startAnimating()
         longPressGestureRecognizer.addTarget(self, action: #selector(longPress(_:)))
+        self.addGestureRecognizer(longPressGestureRecognizer)
     }
     
     func hideIndicator() {
