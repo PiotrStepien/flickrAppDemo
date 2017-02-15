@@ -1,4 +1,4 @@
-//
+ //
 //  ViewController.swift
 //  FlickrDemoApp
 //
@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var cellID: String = "cell"
     var cellNIBName: String = "FlickrPhotoCell"
     lazy var searchBar = UISearchBar()
+    var rightButton: UIBarButtonItem!
     var isSearchBarAdded: Bool = false
     
     override func viewDidLoad() {
@@ -43,13 +44,15 @@ class ViewController: UIViewController {
     }
     
     func initErrorHandler() {
-        viewModelDelegate?.errorHandler = { error in
-            print(error)
+        viewModelDelegate?.errorHandler = { [unowned self] error in
+            self.rightButton.isEnabled = true
+            self.collectionView.isUserInteractionEnabled = true
+            print("Herror handler: \(error)")
         }
     }
     
     func getPicturesFromFlickr() {
-        viewModelDelegate?.getPublicPhotosJSONFromFlickr(successHandler: { 
+        viewModelDelegate?.getPublicPhotosJSONFromFlickr(endpoint: .publicPhotosAll ,successHandler: { [unowned self] in
             self.collectionView.reloadData()
         })
     }
@@ -58,8 +61,9 @@ class ViewController: UIViewController {
         searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.7, height: 20)
         searchBar.placeholder = "Add tag to search"
         let searchItem = UIBarButtonItem(customView: searchBar)
+        searchBar.delegate = self
         self.navigationItem.leftBarButtonItem = searchItem
-        let rightButton = UIBarButtonItem(title: "Search", style: .done, target: self, action: #selector(searchTapped))
+        rightButton = UIBarButtonItem(title: "Search", style: .done, target: self, action: #selector(searchTapped))
         self.navigationItem.rightBarButtonItem = rightButton
         isSearchBarAdded = true
     }
@@ -67,7 +71,17 @@ class ViewController: UIViewController {
     //MARK: - Selectors
     
     func searchTapped() {
-        
+        if let searchText = searchBar.text {
+            searchBar.text = ""
+            searchBar.resignFirstResponder()
+            rightButton.isEnabled = false
+            collectionView.isUserInteractionEnabled = false
+            viewModelDelegate?.getPhotosByTag(tag: searchText, successHandler: { [unowned self] in
+                self.collectionView.reloadData()
+                self.rightButton.isEnabled = true
+                self.collectionView.isUserInteractionEnabled = true
+            })
+        }
     }
 }
 
@@ -100,5 +114,11 @@ extension ViewController: FlickrPhotoCellDelegate {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }, secondCompletionHandler: nil)
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchTapped()
     }
 }
