@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         initCollectionView()
         initErrorHandler()
         getPicturesFromFlickr()
+        setTitle()
     }
 
     func initCollectionView() {
@@ -43,6 +44,10 @@ class ViewController: UIViewController {
         viewModelDelegate?.getPublicPhotosJSONFromFlickr(successHandler: { 
             self.collectionView.reloadData()
         })
+    }
+    
+    func setTitle() {
+        self.title = "Flickr Demo App"
     }
 }
 
@@ -71,6 +76,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
 
 extension ViewController: FlickrPhotoCellDelegate {
     func saveImageInPhotoLiblary(image: UIImage) {
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        let alert = AlertService.shared.twoButtonAlert(title: "Saving photo", message: "Do you want to save photo in photo library?", firstButtonTitle: "Yes", secondButtonTitle: "No", firstCompletionHandler: { _ in
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }, secondCompletionHandler: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 }
