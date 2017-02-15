@@ -19,13 +19,21 @@ class ViewController: UIViewController {
     var viewModelDelegate: ViewControllerViewModel?
     var cellID: String = "cell"
     var cellNIBName: String = "FlickrPhotoCell"
+    lazy var searchBar = UISearchBar()
+    var isSearchBarAdded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectionView()
         initErrorHandler()
         getPicturesFromFlickr()
-        setTitle()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !isSearchBarAdded {
+            addBarItems()
+        }
     }
 
     func initCollectionView() {
@@ -46,8 +54,20 @@ class ViewController: UIViewController {
         })
     }
     
-    func setTitle() {
-        self.title = "Flickr Demo App"
+    func addBarItems() {
+        searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.7, height: 20)
+        searchBar.placeholder = "Add tag to search"
+        let searchItem = UIBarButtonItem(customView: searchBar)
+        self.navigationItem.leftBarButtonItem = searchItem
+        let rightButton = UIBarButtonItem(title: "Search", style: .done, target: self, action: #selector(searchTapped))
+        self.navigationItem.rightBarButtonItem = rightButton
+        isSearchBarAdded = true
+    }
+    
+    //MARK: - Selectors
+    
+    func searchTapped() {
+        
     }
 }
 
