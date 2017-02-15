@@ -13,6 +13,7 @@
 		91AC638A1E5433E500C33588 /* FlickrPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91AC63881E5433E500C33588 /* FlickrPhotoCell.xib */; };
 		91AC638E1E54576D00C33588 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC638D1E54576D00C33588 /* StringExtension.swift */; };
 		91AC63911E54656B00C33588 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC63901E54656B00C33588 /* AlertService.swift */; };
+		91AC63941E54904E00C33588 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC63931E54904E00C33588 /* MailService.swift */; };
 		AF753AD4567FCBE27BF4E158 /* Pods_FlickrDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A018969524B5A11461D33484 /* Pods_FlickrDemoApp.framework */; };
 		D824703C9625694313367152 /* Pods_FlickrDemoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECE86A5CF30D68FBDCE3A87 /* Pods_FlickrDemoAppUITests.framework */; };
 		F608A0891E53609A0065BEC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608A0881E53609A0065BEC3 /* AppDelegate.swift */; };
@@ -58,6 +59,7 @@
 		91AC63881E5433E500C33588 /* FlickrPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickrPhotoCell.xib; sourceTree = "<group>"; };
 		91AC638D1E54576D00C33588 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		91AC63901E54656B00C33588 /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		91AC63931E54904E00C33588 /* MailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		A018969524B5A11461D33484 /* Pods_FlickrDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B608417C4CB7B3D209D4E2F6 /* Pods-FlickrDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrDemoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrDemoApp/Pods-FlickrDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D97317F6724B98DA5F104D64 /* Pods-FlickrDemoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrDemoAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickrDemoAppUITests/Pods-FlickrDemoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 				91AC63901E54656B00C33588 /* AlertService.swift */,
 			);
 			name = AlertService;
+			sourceTree = "<group>";
+		};
+		91AC63921E54904300C33588 /* MailService */ = {
+			isa = PBXGroup;
+			children = (
+				91AC63931E54904E00C33588 /* MailService.swift */,
+			);
+			name = MailService;
 			sourceTree = "<group>";
 		};
 		F608A07C1E53609A0065BEC3 = {
@@ -246,6 +256,7 @@
 		F608A0BA1E5362DF0065BEC3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				91AC63921E54904300C33588 /* MailService */,
 				91AC638F1E5460CD00C33588 /* AlertService */,
 				F608A0C61E536B680065BEC3 /* Networking */,
 			);
@@ -576,6 +587,7 @@
 				F6DF5BF71E53AAA400155E60 /* DictionaryExtension.swift in Sources */,
 				91AC63891E5433E500C33588 /* FlickrPhotoCell.swift in Sources */,
 				F6DF5BF41E537A9E00155E60 /* FlickrPhoto.swift in Sources */,
+				91AC63941E54904E00C33588 /* MailService.swift in Sources */,
 				F608A0C81E536B710065BEC3 /* NetworkingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
