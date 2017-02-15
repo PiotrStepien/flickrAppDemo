@@ -21,7 +21,9 @@
     var cellNIBName: String = "FlickrPhotoCell"
     lazy var searchBar = UISearchBar()
     var rightButton: UIBarButtonItem!
+    var sortButton: UIBarButtonItem!
     var isSearchBarAdded: Bool = false
+    var responseError: ServerErrorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,9 @@
     
     func initErrorHandler() {
         viewModelDelegate?.errorHandler = { [unowned self] error in
+            if error.localizedDescription == JSONErrors.jsonArrayParsingError.localizedDescription {
+                self.addFlickrResponseErrorView()
+            }
             self.rightButton.isEnabled = true
             self.collectionView.isUserInteractionEnabled = true
         }
@@ -52,19 +57,36 @@
     
     func getPicturesFromFlickr() {
         viewModelDelegate?.getPublicPhotosJSONFromFlickr(endpoint: .publicPhotosAll ,successHandler: { [unowned self] in
+            self.removeFlickrErrorView()
             self.collectionView.reloadData()
         })
     }
     
     func addBarItems() {
-        searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.7, height: 20)
+        searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.6, height: 20)
         searchBar.placeholder = "Add tag to search"
         let searchItem = UIBarButtonItem(customView: searchBar)
         searchBar.delegate = self
         self.navigationItem.leftBarButtonItem = searchItem
         rightButton = UIBarButtonItem(title: "Search", style: .done, target: self, action: #selector(searchTapped))
-        self.navigationItem.rightBarButtonItem = rightButton
+        sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortTapped))
+        self.navigationItem.rightBarButtonItems = [sortButton, rightButton]
         isSearchBarAdded = true
+    }
+    
+    func addFlickrResponseErrorView() {
+        responseError = ServerErrorView()
+        self.view.addSubview(responseError)
+        responseError.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        responseError.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        responseError.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        responseError.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+    }
+    
+    func removeFlickrErrorView() {
+        if responseError != nil {
+            responseError.removeFromSuperview()
+        }
     }
     
     //MARK: - Selectors
@@ -76,12 +98,20 @@
             rightButton.isEnabled = false
             collectionView.isUserInteractionEnabled = false
             viewModelDelegate?.getPhotosByTag(tag: searchText, successHandler: { [unowned self] in
+                self.removeFlickrErrorView()
                 self.collectionView.reloadData()
                 self.rightButton.isEnabled = true
                 self.collectionView.isUserInteractionEnabled = true
             })
         }
     }
+    
+    func sortTapped() {
+        viewModelDelegate?.sortPhotosByDate { [unowned self] in
+            self.collectionView.reloadData()
+        }
+    }
+    
  }
  
  extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
