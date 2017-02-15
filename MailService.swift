@@ -12,26 +12,25 @@ import MessageUI
 
 class MailService: NSObject, MFMailComposeViewControllerDelegate {
     
-    fileprivate var mailController: MFMailComposeViewController?
     
-    func sendMail(subject: String, recipients: [String], image: UIImage, imageTitle: String) -> MFMailComposeViewController? {
-        
+    func sendMail(subject: String, recipients: [String], image: UIImage, imageTitle: String) -> MFMailComposeViewController? {  
         if MFMailComposeViewController.canSendMail() {
-            mailController = MFMailComposeViewController()
-            mailController?.setSubject(subject)
-            mailController?.setToRecipients(recipients)
+            let mailController = MFMailComposeViewController()
+            mailController.mailComposeDelegate = self
+            mailController.setSubject(subject)
+            mailController.setToRecipients(recipients)
             if let dataImage = UIImageJPEGRepresentation(image, 0.8) {
-                mailController?.addAttachmentData(dataImage, mimeType: "image/jpeg", fileName: imageTitle)
+                mailController.addAttachmentData(dataImage, mimeType: "image/jpeg", fileName: imageTitle)
             }
+            
+            return mailController
         }
         
-        return mailController
+        return nil
     }
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
+        controller.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 

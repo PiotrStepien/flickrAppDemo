@@ -18,6 +18,7 @@ class FlickrPhoto: Mappable {
     var data: String?
     var description: String?
     var author: String?
+    var link: String?
     
     
     
@@ -29,6 +30,7 @@ class FlickrPhoto: Mappable {
         data <- map["published"]
         description <- map["description"]
         author <- map["author"]
+        link <- map["link"]
     }
 
 }

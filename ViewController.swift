@@ -1,15 +1,15 @@
  //
-//  ViewController.swift
-//  FlickrDemoApp
-//
-//  Created by Piotr Stepien on 14.02.2017.
-//  Copyright © 2017 Piotr Stepien. All rights reserved.
-//
-
-import UIKit
-
-class ViewController: UIViewController {
-
+ //  ViewController.swift
+ //  FlickrDemoApp
+ //
+ //  Created by Piotr Stepien on 14.02.2017.
+ //  Copyright © 2017 Piotr Stepien. All rights reserved.
+ //
+ 
+ import UIKit
+ 
+ class ViewController: UIViewController {
+    
     //MARK: - Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             addBarItems()
         }
     }
-
+    
     func initCollectionView() {
         collectionView.register(UINib(nibName: cellNIBName, bundle: nil), forCellWithReuseIdentifier: cellID)
         collectionView.delegate = self
@@ -47,7 +47,6 @@ class ViewController: UIViewController {
         viewModelDelegate?.errorHandler = { [unowned self] error in
             self.rightButton.isEnabled = true
             self.collectionView.isUserInteractionEnabled = true
-            print("Herror handler: \(error)")
         }
     }
     
@@ -83,9 +82,9 @@ class ViewController: UIViewController {
             })
         }
     }
-}
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+ }
+ 
+ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let photosCount = viewModelDelegate?.flickrPhotosArray.count {
@@ -106,19 +105,23 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         return CGSize(width: collectionView.bounds.width - 10, height: 400)
     }
     
-}
-
-extension ViewController: FlickrPhotoCellDelegate {
-    func saveImageInPhotoLiblary(image: UIImage) {
-        let alert = AlertService.shared.twoButtonAlert(title: "Saving photo", message: "Do you want to save photo in photo library?", firstButtonTitle: "Yes", secondButtonTitle: "No", firstCompletionHandler: { _ in
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }, secondCompletionHandler: nil)
-        self.present(alert, animated: true, completion: nil)
+ }
+ 
+ extension ViewController: FlickrPhotoCellDelegate {
+    func photoInfo(image: UIImage, imageURL: String) {
+        viewModelDelegate?.image = image
+        viewModelDelegate?.imageLink = imageURL
+        if !(self.navigationController?.visibleViewController?.isKind(of: UIAlertController.self))! {
+            if let controller = viewModelDelegate?.presentAlertControlerWithOptions(controller: self) {
+                present(controller, animated: true, completion: nil)
+            }
+        }
+        
     }
-}
-
-extension ViewController: UISearchBarDelegate {
+ }
+ 
+ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchTapped()
     }
-}
+ }

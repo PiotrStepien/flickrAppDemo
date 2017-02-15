@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FlickrPhotoCellDelegate: class {
-    func saveImageInPhotoLiblary(image: UIImage)
+    func photoInfo(image: UIImage, imageURL: String)
 }
 
 
@@ -78,8 +78,8 @@ class FlickrPhotoCell: UICollectionViewCell {
     }
     
     func longPress(_ gesture: UILongPressGestureRecognizer) {
-        if let image = imageView.image {
-            delegate?.saveImageInPhotoLiblary(image: image)
+        if let image = imageView.image, let url = photoJSONDict?.link {
+            delegate?.photoInfo(image: image, imageURL: url)
         }
     }
 }
