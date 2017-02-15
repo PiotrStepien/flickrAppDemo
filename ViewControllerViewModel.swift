@@ -31,26 +31,33 @@ class ViewControllerViewModel {
     
     //MARK: - Methods
     
-    func getPublicPhotosJSONFromFlickr(successHandler: @escaping () -> ()) {
-        DispatchQueue.global(qos: .userInteractive).async {
-            self.networkService.requestJSON(endpoint: .publicPhotosAll) { (request, response, error) in
-                let resp = response as? HTTPURLResponse
-                if resp?.statusCode == 200 || resp?.statusCode == 201 {
-                    if let photosArray = request?[JSONChild.items.rawValue] as? [[String : Any]] {
-                        if let photoObjects = Mapper<FlickrPhoto>().mapArray(JSONArray: photosArray) {
-                            self.flickrPhotosArray = photoObjects
-                            DispatchQueue.main.async {
-                                successHandler()
-                            }
-                        } else {
-                            self.errorHandler?(JSONErrors.objectMapperError)
+    func getPublicPhotosJSONFromFlickr(endpoint: NetworkEndpoint, successHandler: @escaping () -> ()) {
+        self.networkService.requestJSON(endpoint: endpoint) { (request, response, error) in
+            let resp = response as? HTTPURLResponse
+            if resp?.statusCode == 200 || resp?.statusCode == 201 {
+                if let photosArray = request?[JSONChild.items.rawValue] as? [[String : Any]] {
+                    if let photoObjects = Mapper<FlickrPhoto>().mapArray(JSONArray: photosArray) {
+                        self.flickrPhotosArray = photoObjects
+                        DispatchQueue.main.async {
+                            successHandler()
                         }
                     } else {
-                        self.errorHandler?(JSONErrors.jsonArrayParsingError)
+                        DispatchQueue.main.async {
+                            self.errorHandler?(JSONErrors.objectMapperError)
+                        }
+                        
                     }
                 } else {
+                    DispatchQueue.main.async {
+                        self.errorHandler?(JSONErrors.jsonArrayParsingError)
+                    }
+                    
+                }
+            } else {
+                DispatchQueue.main.async {
                     self.errorHandler?(JSONErrors.responseStatusError)
                 }
+                
             }
         }
     }
@@ -65,8 +72,12 @@ class ViewControllerViewModel {
         }
     }
     
-    func test() {
-        print("test")
+    func getPhotosByTag(tag: String, successHandler: @escaping () -> ()) {
+        getPublicPhotosJSONFromFlickr(endpoint: .publicPhotosWithTag(tag: tag)) {
+            DispatchQueue.main.async {
+                successHandler()
+            }
+        }
     }
     
 }

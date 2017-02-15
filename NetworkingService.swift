@@ -17,19 +17,21 @@ enum RESTMethods: String {
 
 enum NetworkEndpoint {
     case publicPhotosAll
+    case publicPhotosWithTag(tag: String)
     
     
     var mainURL: String { return "https://api.flickr.com/services" }
     var path: String {
         switch self {
-        case .publicPhotosAll:
+        case .publicPhotosAll, .publicPhotosWithTag(tag: _):
             return mainURL + "/feeds/photos_public.gne"
+
         }
     }
     
     var method: RESTMethods {
         switch self {
-        case .publicPhotosAll:
+        case .publicPhotosAll, .publicPhotosWithTag(tag: _):
             return .get
         }
     }
@@ -39,12 +41,16 @@ enum NetworkEndpoint {
         case .publicPhotosAll:
             let param = ["format" : "json", "nojsoncallback" : 1] as [String: Any]
             return param
+            
+        case .publicPhotosWithTag(let tag):
+            let param = ["format" : "json", "nojsoncallback" : 1, "tagmode" : "All", "tag" : tag] as [String: Any]
+            return param
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .publicPhotosAll:
+        case .publicPhotosAll, .publicPhotosWithTag(tag: _):
             return nil
         }
     }
@@ -59,7 +65,7 @@ enum NetworkingServiceErrors: Error {
 class NetworkingService {
     
     
-    func requestJSON(endpoint: NetworkEndpoint, completion: @escaping (NSDictionary?, URLResponse?, Error?) -> Void) {
+    func requestJSON(endpoint: NetworkEndpoint, completion: @escaping ([String: AnyObject]?, URLResponse?, Error?) -> Void) {
         if isConnectedToNetwork() == true {
             if let url = URL(string: endpoint.path) {
                 var request = URLRequest(url: url)
@@ -97,13 +103,14 @@ class NetworkingService {
         }
     }
     
-    fileprivate func taskHandler(request: URLRequest, completion: @escaping (NSDictionary?, URLResponse?, Error?) -> Void ) {
+    fileprivate func taskHandler(request: URLRequest, completion: @escaping ([String: AnyObject]?, URLResponse?, Error?) -> Void ) {
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
             if error == nil {
                 do {
-                    let session = try JSONSerialization.jsonObject(with: data!, options: [.allowFragments]) as? NSDictionary
+                    let session = try JSONSerialization.jsonObject(with: data!, options: [.mutableContainers, .allowFragments]) as? [String: AnyObject]
                     completion(session, response, error)
                 } catch let error {
+                    print("KURWA: \(error.localizedDescription)")
                     completion(nil, response, error)
                 }
             } else {
