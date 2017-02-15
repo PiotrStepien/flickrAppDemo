@@ -19,12 +19,18 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="thM-zg-vll">
-                        <rect key="frame" x="0.0" y="0.0" width="365" height="326.5"/>
+                        <rect key="frame" x="0.0" y="5" width="365" height="321.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsX-cw-pfw">
                         <rect key="frame" x="5" y="331.5" width="355" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJQ-dS-uGx">
+                        <rect key="frame" x="5" y="354.5" width="355" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -41,26 +47,30 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJQ-dS-uGx">
-                        <rect key="frame" x="5" y="354.5" width="355" height="14.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wso-Bd-93h">
+                        <rect key="frame" x="0.0" y="399" width="365" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="eTq-Xl-SbN"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="thM-zg-vll" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2ye-cf-PfT"/>
+                <constraint firstItem="thM-zg-vll" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="2ye-cf-PfT"/>
                 <constraint firstItem="iJQ-dS-uGx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="3En-PC-u8w"/>
+                <constraint firstAttribute="bottom" secondItem="wso-Bd-93h" secondAttribute="bottom" id="4dd-Lu-brL"/>
                 <constraint firstItem="EIz-iX-bXS" firstAttribute="top" secondItem="iJQ-dS-uGx" secondAttribute="bottom" constant="5" id="9RR-3o-pz1"/>
                 <constraint firstAttribute="bottom" secondItem="EIz-iX-bXS" secondAttribute="bottom" constant="5" id="Jr0-qM-frk"/>
                 <constraint firstItem="thM-zg-vll" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="K7t-IL-aBi"/>
                 <constraint firstItem="EIz-iX-bXS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Mjw-u0-FS5"/>
+                <constraint firstItem="wso-Bd-93h" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OoT-ei-cjp"/>
                 <constraint firstItem="lsX-cw-pfw" firstAttribute="top" secondItem="thM-zg-vll" secondAttribute="bottom" constant="5" id="Qhh-zT-T1j"/>
                 <constraint firstItem="lsX-cw-pfw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="SYw-LT-dY5"/>
                 <constraint firstAttribute="trailing" secondItem="EIz-iX-bXS" secondAttribute="trailing" constant="5" id="W6l-3O-FI6"/>
                 <constraint firstAttribute="trailing" secondItem="thM-zg-vll" secondAttribute="trailing" id="YaZ-3r-6w9"/>
+                <constraint firstAttribute="trailing" secondItem="wso-Bd-93h" secondAttribute="trailing" id="bIO-5U-vL8"/>
                 <constraint firstAttribute="trailing" secondItem="iJQ-dS-uGx" secondAttribute="trailing" constant="5" id="coK-1P-XBK"/>
                 <constraint firstItem="iJQ-dS-uGx" firstAttribute="top" secondItem="lsX-cw-pfw" secondAttribute="bottom" constant="5" id="d5l-Q7-vpg"/>
                 <constraint firstAttribute="trailing" secondItem="lsX-cw-pfw" secondAttribute="trailing" constant="5" id="hym-Uu-2TY"/>

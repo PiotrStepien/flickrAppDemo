@@ -26,7 +26,7 @@ class FlickrPhotoCell: UICollectionViewCell {
     var photoJSONDict: FlickrPhoto? {
         didSet {
             if let info = photoJSONDict {
-                if let imgURL = info.photoURL, let title = info.title, let author = info.author, let date = info.data {
+                if let imgURL = info.photoURL, let title = info.title, let author = info.author, let date = info.data?.convertDateToString(dateFormat: .medium) {
                     if let image = viewControlerViewModel?.imageCash.object(forKey: imgURL as AnyObject) {
                         imageView.image = image as? UIImage
                         hideIndicator()
