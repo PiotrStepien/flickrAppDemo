@@ -116,4 +116,14 @@ class ViewControllerViewModel {
         return nil
     }
     
+    func sortPhotosByDate(success: @escaping() -> ()) {
+        if !flickrPhotosArray.isEmpty {
+            flickrPhotosArray.sort(by: { $0.data!.convertToDate()! < $1.data!.convertToDate()! })
+            success()
+        }
+        
+        
+        
+    }
+    
 }

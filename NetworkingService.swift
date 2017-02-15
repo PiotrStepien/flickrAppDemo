@@ -110,7 +110,6 @@ class NetworkingService {
                     let session = try JSONSerialization.jsonObject(with: data!, options: [.mutableContainers, .allowFragments]) as? [String: AnyObject]
                     completion(session, response, error)
                 } catch let error {
-                    print("KURWA: \(error.localizedDescription)")
                     completion(nil, response, error)
                 }
             } else {
