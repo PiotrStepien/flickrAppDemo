@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         initCollectionView()
         initErrorHandler()
         getPicturesFromFlickr()
+        setTitle()
     }
 
     func initCollectionView() {
@@ -43,6 +44,10 @@ class ViewController: UIViewController {
         viewModelDelegate?.getPublicPhotosJSONFromFlickr(successHandler: { 
             self.collectionView.reloadData()
         })
+    }
+    
+    func setTitle() {
+        self.title = "Flickr Demo App"
     }
 }
 
