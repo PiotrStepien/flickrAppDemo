@@ -27,7 +27,7 @@ class ViewControllerViewModel {
     var flickrPhotosArray = [FlickrPhoto]()
     var errorHandler: ((Error) -> ())?
     fileprivate var networkService = NetworkingService()
-    
+    var imageCash = NSCache<AnyObject, AnyObject>()
     
     //MARK: - Methods
     
@@ -39,7 +39,9 @@ class ViewControllerViewModel {
                     if let photosArray = request?[JSONChild.items.rawValue] as? [[String : Any]] {
                         if let photoObjects = Mapper<FlickrPhoto>().mapArray(JSONArray: photosArray) {
                             self.flickrPhotosArray = photoObjects
-                            successHandler()
+                            DispatchQueue.main.async {
+                                successHandler()
+                            }
                         } else {
                             self.errorHandler?(JSONErrors.objectMapperError)
                         }
@@ -56,11 +58,15 @@ class ViewControllerViewModel {
     
     func downloadImage(url: String, dataHandler: @escaping(Data) -> (), errorHandler: @escaping(Error?) -> ()) {
         networkService.downloadImageData(url, imageHandler: { (data: Data) in
+            
             dataHandler(data)
         }) { (error) in
             errorHandler(error)
         }
     }
     
+    func test() {
+        print("test")
+    }
     
 }

@@ -18,16 +18,17 @@ class ViewController: UIViewController {
     
     var viewModelDelegate: ViewControllerViewModel?
     var cellID: String = "cell"
-    
+    var cellNIBName: String = "FlickrPhotoCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectionView()
         initErrorHandler()
+        getPicturesFromFlickr()
     }
 
     func initCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellID)
+        collectionView.register(UINib(nibName: cellNIBName, bundle: nil), forCellWithReuseIdentifier: cellID)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -37,22 +38,32 @@ class ViewController: UIViewController {
             print(error)
         }
     }
+    
+    func getPicturesFromFlickr() {
+        viewModelDelegate?.getPublicPhotosJSONFromFlickr(successHandler: { 
+            self.collectionView.reloadData()
+        })
+    }
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if let photosCount = viewModelDelegate?.flickrPhotosArray.count {
+            return photosCount
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! FlickrPhotoCell
+        cell.viewControlerViewModel = viewModelDelegate
+        cell.photoJSONDict = viewModelDelegate?.flickrPhotosArray[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width - 10, height: 300)
+        return CGSize(width: collectionView.bounds.width - 10, height: 400)
     }
     
     

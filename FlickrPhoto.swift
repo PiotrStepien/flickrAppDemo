@@ -15,7 +15,7 @@ class FlickrPhoto: Mappable {
     
     var title: String?
     var photoURL: String?
-    var data: Date?
+    var data: String?
     var description: String?
     var author: String?
     
