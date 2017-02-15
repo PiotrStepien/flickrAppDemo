@@ -58,6 +58,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! FlickrPhotoCell
         cell.viewControlerViewModel = viewModelDelegate
+        cell.delegate = self
         cell.photoJSONDict = viewModelDelegate?.flickrPhotosArray[indexPath.row]
         return cell
     }
@@ -66,6 +67,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         return CGSize(width: collectionView.bounds.width - 10, height: 400)
     }
     
-    
-    
+}
+
+extension ViewController: FlickrPhotoCellDelegate {
+    func saveImageInPhotoLiblary(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
 }

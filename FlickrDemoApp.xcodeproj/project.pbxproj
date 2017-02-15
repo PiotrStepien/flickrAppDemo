@@ -139,6 +139,13 @@
 			path = FlickrDemoApp;
 			sourceTree = "<group>";
 		};
+		91AC638F1E5460CD00C33588 /* AlertService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AlertService;
+			sourceTree = "<group>";
+		};
 		F608A07C1E53609A0065BEC3 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +243,7 @@
 		F608A0BA1E5362DF0065BEC3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				91AC638F1E5460CD00C33588 /* AlertService */,
 				F608A0C61E536B680065BEC3 /* Networking */,
 			);
 			name = Services;

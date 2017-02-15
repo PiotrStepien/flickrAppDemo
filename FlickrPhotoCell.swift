@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol FlickrPhotoCellDelegate: class {
+    func saveImageInPhotoLiblary(image: UIImage)
+}
 
 
 class FlickrPhotoCell: UICollectionViewCell {
@@ -22,6 +25,8 @@ class FlickrPhotoCell: UICollectionViewCell {
     
     //MARK: - Variables
     
+    var longPressGestureRecognizer = UILongPressGestureRecognizer()
+    weak var delegate: FlickrPhotoCellDelegate?
     weak var viewControlerViewModel: ViewControllerViewModel?
     var photoJSONDict: FlickrPhoto? {
         didSet {
@@ -58,6 +63,7 @@ class FlickrPhotoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         indicatorView.startAnimating()
+        longPressGestureRecognizer.addTarget(self, action: #selector(longPress(_:)))
     }
     
     func hideIndicator() {
@@ -68,5 +74,11 @@ class FlickrPhotoCell: UICollectionViewCell {
     func setErrorPhoto() {
         self.imageView.image = #imageLiteral(resourceName: "noImageIcon")
         self.hideIndicator()
+    }
+    
+    func longPress(_ gesture: UILongPressGestureRecognizer) {
+        if let image = imageView.image {
+            delegate?.saveImageInPhotoLiblary(image: image)
+        }
     }
 }
