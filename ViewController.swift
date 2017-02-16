@@ -23,7 +23,7 @@
     var rightButton: UIBarButtonItem!
     var sortButton: UIBarButtonItem!
     var isSearchBarAdded: Bool = false
-    var responseError: ServerErrorView!
+    var responseError = ServerErrorView(errorTitle: "Flickr server response error", frame: .zero)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +75,6 @@
     }
     
     func addFlickrResponseErrorView() {
-        responseError = ServerErrorView()
         self.view.addSubview(responseError)
         responseError.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         responseError.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -84,9 +83,7 @@
     }
     
     func removeFlickrErrorView() {
-        if responseError != nil {
-            responseError.removeFromSuperview()
-        }
+        responseError.removeFromSuperview()
     }
     
     //MARK: - Selectors
