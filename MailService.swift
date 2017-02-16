@@ -20,7 +20,7 @@ class MailService: NSObject, MFMailComposeViewControllerDelegate {
             mailController.setSubject(subject)
             mailController.setToRecipients(recipients)
             if let dataImage = UIImageJPEGRepresentation(image, 0.8) {
-                mailController.addAttachmentData(dataImage, mimeType: "image/jpeg", fileName: imageTitle)
+                mailController.addAttachmentData(dataImage, mimeType: mimeType, fileName: imageTitle)
             }
             
             return mailController
