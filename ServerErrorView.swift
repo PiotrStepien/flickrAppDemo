@@ -32,6 +32,11 @@ class ServerErrorView: UIView {
         setup()
     }
     
+    convenience init(errorTitle: String, frame: CGRect) {
+        self.init(frame: frame)
+        self.label.text = errorTitle
+    }
+    
     func setup() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .black

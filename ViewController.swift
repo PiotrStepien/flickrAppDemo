@@ -17,13 +17,13 @@
     //MARK: - Variables
     
     var viewModelDelegate: ViewControllerViewModel?
-    var cellID: String = "cell"
-    var cellNIBName: String = "FlickrPhotoCell"
+    var cellID: String = cellIDString
+    var cellNIBName: String = cellNIBNameString
     lazy var searchBar = UISearchBar()
     var rightButton: UIBarButtonItem!
     var sortButton: UIBarButtonItem!
     var isSearchBarAdded: Bool = false
-    var responseError: ServerErrorView!
+    var responseError = ServerErrorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +47,10 @@
     
     func initErrorHandler() {
         viewModelDelegate?.errorHandler = { [unowned self] error in
-            if error.localizedDescription == JSONErrors.jsonArrayParsingError.localizedDescription {
-                self.addFlickrResponseErrorView()
+            if error?.localizedDescription == JSONErrors.jsonArrayParsingError.localizedDescription {
+                self.addFlickrResponseErrorView(errorLabel: serverErrorTitle)
+            } else {
+                self.addFlickrResponseErrorView(errorLabel: (error?.localizedDescription)!)
             }
             self.rightButton.isEnabled = true
             self.collectionView.isUserInteractionEnabled = true
@@ -64,18 +66,18 @@
     
     func addBarItems() {
         searchBar.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.6, height: 20)
-        searchBar.placeholder = "Add tag to search"
+        searchBar.placeholder = searchBarPlaceholderTitle
         let searchItem = UIBarButtonItem(customView: searchBar)
         searchBar.delegate = self
         self.navigationItem.leftBarButtonItem = searchItem
-        rightButton = UIBarButtonItem(title: "Search", style: .done, target: self, action: #selector(searchTapped))
-        sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortTapped))
+        rightButton = UIBarButtonItem(title: searchButtonTitle, style: .done, target: self, action: #selector(searchTapped))
+        sortButton = UIBarButtonItem(title: sortButtonTitle, style: .plain, target: self, action: #selector(sortTapped))
         self.navigationItem.rightBarButtonItems = [sortButton, rightButton]
         isSearchBarAdded = true
     }
     
-    func addFlickrResponseErrorView() {
-        responseError = ServerErrorView()
+    func addFlickrResponseErrorView(errorLabel: String) {
+        responseError.label.text = errorLabel
         self.view.addSubview(responseError)
         responseError.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         responseError.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
@@ -84,9 +86,7 @@
     }
     
     func removeFlickrErrorView() {
-        if responseError != nil {
-            responseError.removeFromSuperview()
-        }
+        responseError.removeFromSuperview()
     }
     
     //MARK: - Selectors

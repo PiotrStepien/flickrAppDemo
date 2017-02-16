@@ -49,9 +49,9 @@ class FlickrPhotoCell: UICollectionViewCell {
                                 }
                         })
                     }
-                    titleLabel.text = "Title: \(title)"
-                    authorLabel.text = "Author: \(author)"
-                    publishDate.text = "Published: \(date)"
+                    titleLabel.text = "\(titleInfo) \(title)"
+                    authorLabel.text = "\(authorInfo) \(author)"
+                    publishDate.text = "\(published) \(date)"
                 }
             } else {
                 setErrorPhoto()
